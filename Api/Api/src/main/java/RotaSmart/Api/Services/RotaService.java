@@ -28,22 +28,7 @@ public class RotaService {
         return rotaRepository.findById(id).orElse(null);
     }
 
-    // Atualizar status ou dados de uma rota
-    public Rotas atualizarRota(Long id, Rotas dadosAtualizados) {
-        Rotas rotaExistente = buscarPorId(id);
-        if (rotaExistente != null) {
-            rotaExistente.setDescricao(dadosAtualizados.getDescricao());
-            rotaExistente.setOrigem(dadosAtualizados.getOrigem());
-            rotaExistente.setDestino(dadosAtualizados.getDestino());
-            rotaExistente.setDataSaida(dadosAtualizados.getDataSaida());
-            rotaExistente.setDataChegadaPrevista(dadosAtualizados.getDataChegadaPrevista());
-            rotaExistente.setStatus(dadosAtualizados.getStatus());
-            rotaExistente.setMotorista(dadosAtualizados.getMotorista());
-            rotaExistente.setVeiculo(dadosAtualizados.getVeiculo());
-            return rotaRepository.save(rotaExistente);
-        }
-        return null;
-    }
+ 
 
     // Deletar uma rota
     public void deletar(Long id) {
